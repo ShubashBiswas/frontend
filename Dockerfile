@@ -19,8 +19,8 @@ ARG VENDURE_SHOP_API_URL
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV VENDURE_SHOP_API_URL=${VENDURE_SHOP_API_URL}
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/node_modules ./node_modules
+COPY package*.json ./
+RUN npm ci --production
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.ts ./next.config.ts
