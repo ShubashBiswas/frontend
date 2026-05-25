@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VENDURE_SHOP_API_URL: https://demo.vendure.io/shop-api
+    ports:
+      - "3000:3000"
+    environment:
+      VENDURE_SHOP_API_URL: https://demo.vendure.io/shop-api
+      NODE_ENV: production
+      PORT: 3000
+    restart: unless-stopped
