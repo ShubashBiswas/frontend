@@ -6,7 +6,7 @@ services:
       args:
         VENDURE_SHOP_API_URL: https://vendure.shubash.me/shop-api
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       VENDURE_SHOP_API_URL: https://vendure.shubash.me/shop-api
       NODE_ENV: production
